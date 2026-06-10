@@ -1,0 +1,20 @@
+# ESP-IDF build output
+build/
+*/build/
+
+# SDK config backups
+sdkconfig.old
+*/sdkconfig.old
+
+# ESP-IDF Python environment
+.espressif/
+
+# Compiled Python
+__pycache__/
+*.pyc
+
+# VSCode settings
+.vscode/
+
+# macOS
+.DS_Store
