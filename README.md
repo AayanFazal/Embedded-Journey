@@ -20,3 +20,5 @@ The goal is to move beyond application-level firmware and develop strong fundame
 ## 📁 Repository Structure
 
 Each folder represents a self-contained embedded systems project:
+##[Blink](./blink) 
+-First ESP32 project. Blink onboard LED 
