@@ -6,20 +6,11 @@ The goal is to move beyond application-level firmware and develop strong fundame
 
 ---
 
-## 🎯 Core Focus Areas
-
-- Embedded C programming (memory, registers, bit manipulation)
-- Bare-metal microcontroller development concepts
-- Peripheral driver development (GPIO, UART, I2C, SPI, PWM)
-- Hardware abstraction and register-level understanding
-- Real-time systems (FreeRTOS and task scheduling in ESP32 context)
-- Debugging embedded systems using serial output and tooling
-
----
-
 ## 📁 Repository Structure
 
 Each folder represents a self-contained embedded systems project:
 
-## [Blink](./Blink) 
--First ESP32 project. Blink onboard LED 
+## [Blink](./Blink)  
+- **ESP32 Bare-Metal GPIO Driver:** Bypassed high-level framework abstraction layers (ESP-IDF/Arduino APIs) to implement low-level hardware control via direct register manipulation.
+  - *Key Concepts Mastered:* Memory-Mapped I/O (MMIO), bitwise operations (`<<`, `|=`), and using `volatile` pointer typecasting to safely map C variables onto physical 32-bit hardware register addresses (`GPIO_ENABLE_REG`, `GPIO_OUT_W1TS_REG`, `GPIO_OUT_W1TC_REG`).
+  - *Concurrency:* Integrated FreeRTOS primitive functions (`vTaskDelay`) to handle clock-tick based timing synchronization within the core application loop.
