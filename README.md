@@ -7,13 +7,11 @@ The goal is to move beyond application-level firmware and develop strong fundame
 ---
 
 ## 📁 Repository Structure
-Each folder represents a self-contained embedded systems project:
 
-## [Blink](./Blink)  
--Implemented a custom register-mapped GPIO driver utilizing volatile pointer typecasting to safely map hardware addresses (`GPIO_ENABLE_REG`, `GPIO_OUT_W1TS_REG`).
+### [Blink](./Blink)  
 
--Utilized bitwise mask operations (`|=`, `<<`) to handle pin configuration without disturbing adjacent peripheral registers.
+- Implemented a custom register-mapped GPIO driver utilizing volatile pointer typecasting to safely map hardware addresses (`GPIO_ENABLE_REG`, `GPIO_OUT_W1TS_REG`).
+- Utilized bitwise mask operations (`|=`, `<<`) to handle pin configuration without disturbing adjacent peripheral registers.
+- Managed loop timing via FreeRTOS `vTaskDelay` to prevent CPU thread starvation.
 
--Managed loop timing via FreeRTOS `vTaskDelay` to prevent CPU thread starvation.
-
-<img width="180" height="320" alt="045CFFEE-64AB-47C9-BAF8-BEAC371C23A0" src="https://github.com/user-attachments/assets/023f9400-377e-44db-b165-6fd24e4b2433" />
+<img width="200" alt="Blink" src="https://github.com/user-attachments/assets/9dd54d84-8c1a-4b3d-bb92-8670f93a4490" />
