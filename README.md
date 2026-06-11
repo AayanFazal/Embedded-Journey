@@ -10,6 +10,8 @@ The goal is to move beyond application-level firmware and develop strong fundame
 
 ### [Blink](./Blink)  
 
+*Objective*: Blink the onboard LED using bare-metal concepts
+
 - Implemented a custom register-mapped GPIO driver utilizing volatile pointer typecasting to safely map hardware addresses (`GPIO_ENABLE_REG`, `GPIO_OUT_W1TS_REG`).
 - Utilized bitwise mask operations (`|=`, `<<`) to handle pin configuration without disturbing adjacent peripheral registers.
 - Managed loop timing via FreeRTOS `vTaskDelay` to prevent CPU thread starvation.
