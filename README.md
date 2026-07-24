@@ -6,14 +6,22 @@ The goal is to move beyond application-level firmware and develop strong fundame
 
 ---
 
-## 📁 Repository Structure
+# 📁 Repository Structure
 
-### [Blink](./Blink)  
+## [Blink](./Blink)  
 
-*Objective*: Blink the onboard LED using bare-metal concepts
+### Objective
+Blink the ESP32 onboard LED by directly accessing GPIO hardware registers instead of using the ESP-IDF GPIO driver. 
 
-- Implemented a custom register-mapped GPIO driver utilizing volatile pointer typecasting to safely map hardware addresses (`GPIO_ENABLE_REG`, `GPIO_OUT_W1TS_REG`).
-- Utilized bitwise mask operations (`|=`, `<<`) to handle pin configuration without disturbing adjacent peripheral registers.
-- Managed loop timing via FreeRTOS `vTaskDelay` to prevent CPU thread starvation.
+### Concepts
+- Memory-mapped I/O
+- volatile
+- Bitwise operations
+- GPIO registers
 
+## What I Learned
+- Registers are accessed through fixed memory addresses.
+- volatile prevents compiler optimization of hardware accesses.
+- W1TS/W1TC registers allow individual GPIO pins to be modified safely.
+  
 <img width="200" alt="Blink" src="https://github.com/user-attachments/assets/9dd54d84-8c1a-4b3d-bb92-8670f93a4490" />
